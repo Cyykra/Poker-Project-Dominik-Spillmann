@@ -1,5 +1,7 @@
 package poker.version_graphics.controller;
 
+
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import poker.version_graphics.PokerGame;
@@ -7,12 +9,15 @@ import poker.version_graphics.model.Card;
 import poker.version_graphics.model.DeckOfCards;
 import poker.version_graphics.model.Player;
 import poker.version_graphics.model.PokerGameModel;
+import poker.version_graphics.model.WinEvaluation;
 import poker.version_graphics.view.PlayerPane;
 import poker.version_graphics.view.PokerGameView;
+
 
 public class PokerGameController {
 	private PokerGameModel model;
 	private PokerGameView view;
+	private WinEvaluation wins;
 	
 	public PokerGameController(PokerGameModel model, PokerGameView view) {
 		this.model = model;
@@ -56,6 +61,9 @@ public class PokerGameController {
         		PlayerPane pp = view.getPlayerPane(i);
         		pp.updatePlayerDisplay();
         	}
+        	
+        	
+        	
     	} else {
             Alert alert = new Alert(AlertType.ERROR, "Not enough cards - shuffle first");
             alert.showAndWait();

@@ -8,7 +8,7 @@ import poker.version_graphics.view.PokerGameView;
 
 
 public class PokerGame extends Application {
-	public static final int NUM_PLAYERS = 2;
+	public static int NUM_PLAYERS = 2;
 	PokerGameModel model;
 	PokerGameView view;
 	PokerGameController controller;
@@ -24,4 +24,8 @@ public class PokerGame extends Application {
     	view = new PokerGameView(primaryStage, model);
     	controller = new PokerGameController(model, view);
     }
+    
+    
+    
+ 
 }

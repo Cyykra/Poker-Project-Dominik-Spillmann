@@ -2,17 +2,20 @@ package poker.version_graphics.view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import poker.version_graphics.PokerGame;
+import poker.version_graphics.model.Player;
 import poker.version_graphics.model.PokerGameModel;
 
 public class PokerGameView {
 	private HBox players;
 	private ControlArea controls;
+	
 	
 	private PokerGameModel model;
 	
@@ -36,6 +39,19 @@ public class PokerGameView {
 		root.setCenter(players);
 		root.setBottom(controls);
 		
+		
+		//Create Add and Remove Button for Players
+		VBox box = new VBox();
+		Button addPl = new Button("Add Player");
+		Button removePl = new Button("Remove Player");
+		box.getChildren().addAll(addPl, removePl);
+		root.setLeft(box);
+		
+		addPl.setOnMouseClicked(this::processAddPlayer);
+		removePl.setOnMouseClicked(this::processRemovePlayer);
+		
+		
+		
 		// Disallow resizing - which is difficult to get right with images
 		stage.setResizable(false);
 
@@ -43,7 +59,7 @@ public class PokerGameView {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(
                 getClass().getResource("poker.css").toExternalForm());
-        stage.setTitle("Poker Miniproject");
+        stage.setTitle("Cyykra's Poker-Project");
         stage.setScene(scene);
         stage.show();		
 	}
@@ -59,4 +75,19 @@ public class PokerGameView {
 	public Button getDealButton() {
 		return controls.btnDeal;
 	}
+	
+	public void processAddPlayer(MouseEvent e) {
+		model.addPlayer();	
+		PlayerPane pp = new PlayerPane();
+		pp.setPlayer(model.getPlayer(PokerGame.NUM_PLAYERS-1));
+		players.getChildren().add(pp);
+			
+		
+	}
+	
+	public void processRemovePlayer(MouseEvent e) {
+		model.removePlayer();
+		players.getChildren().remove(PokerGame.NUM_PLAYERS);
+	}
+	
 }

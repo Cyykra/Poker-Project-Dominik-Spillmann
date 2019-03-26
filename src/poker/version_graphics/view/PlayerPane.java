@@ -7,11 +7,18 @@ import javafx.scene.layout.VBox;
 import poker.version_graphics.model.Card;
 import poker.version_graphics.model.HandType;
 import poker.version_graphics.model.Player;
+import poker.version_graphics.model.WinEvaluation;
+
 
 public class PlayerPane extends VBox {
     private Label lblName = new Label();
     private HBox hboxCards = new HBox();
     private Label lblEvaluation = new Label("--");
+    private int winCounter = 0;
+    private Label lblWins = new Label("Wins: " + winCounter);
+    private WinEvaluation wins;
+    
+    
     
     // Link to player object
     private Player player;
@@ -22,6 +29,7 @@ public class PlayerPane extends VBox {
         
         // Add child nodes
         this.getChildren().addAll(lblName, hboxCards, lblEvaluation);
+        this.getChildren().add(lblWins);
         
         // Add CardLabels for the cards
         for (int i = 0; i < 5; i++) {
@@ -32,7 +40,9 @@ public class PlayerPane extends VBox {
     
     public void setPlayer(Player player) {
     	this.player = player;
-    	updatePlayerDisplay(); // Immediately display the player information
+    	updatePlayerDisplay();// Immediately display the player information
+    	
+    	
     }
     
     public void updatePlayerDisplay() {
@@ -48,5 +58,10 @@ public class PlayerPane extends VBox {
     		else
     			lblEvaluation.setText("--");
     	}
+    	
+    	
     }
+    
+    
+    
 }
