@@ -8,7 +8,7 @@ import poker.version_graphics.view.PokerGameView;
 
 
 public class PokerGame extends Application {
-	public static int NUM_PLAYERS = 2;
+	public static int NUM_PLAYERS = 0;
 	PokerGameModel model;
 	PokerGameView view;
 	PokerGameController controller;
@@ -17,7 +17,7 @@ public class PokerGame extends Application {
         launch();
     }
 
-    @Override
+    //Start MVC components
     public void start(Stage primaryStage) throws Exception {
     	// Create and initialize the MVC components
     	model = new PokerGameModel();

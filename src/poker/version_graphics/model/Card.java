@@ -50,6 +50,39 @@ public class Card implements Comparable<Card> {
         return rank;
     }
     
+    public String getCardScore() {
+    	String s = "0" + rank;
+    	if(rank==rank.Ten) {
+    		s = "10";
+    	}else if(rank == rank.Jack) {
+    		s = "11";
+    	}else if(rank == rank.Queen) {
+    		s = "12";
+    	}else if(rank == rank.King) {
+    		s = "13";
+    	}else if(rank == rank.Ace) {
+    		s = "14";
+    	}
+    	return s;
+    	
+    }
+    
+    public int getCardScoreAsInt() {
+    	String s = "0" + rank;
+    	if(rank==rank.Ten) {
+    		s = "10";
+    	}else if(rank == rank.Jack) {
+    		s = "11";
+    	}else if(rank == rank.Queen) {
+    		s = "12";
+    	}else if(rank == rank.King) {
+    		s = "13";
+    	}else if(rank == rank.Ace) {
+    		s = "14";
+    	}
+    	return Integer.parseInt(s);
+    }
+    
     @Override
     public String toString() {
         return rank.toString() + suit.toString();

@@ -13,6 +13,7 @@ public class CardLabel extends Label {
 
 	public void setCard(Card card) {
 		if (card != null) {
+			
 			String fileName = cardToFileName(card);
 			Image image = new Image(this.getClass().getClassLoader().getResourceAsStream("poker/images/" + fileName));
 			ImageView imv = new ImageView(image);
@@ -20,8 +21,18 @@ public class CardLabel extends Label {
 			imv.fitHeightProperty().bind(this.heightProperty());
 			imv.setPreserveRatio(true);
 			this.setGraphic(imv);
+			
+			
 		} else {
-			this.setGraphic(null);
+			
+			Image image = new Image(this.getClass().getClassLoader().getResourceAsStream("poker/images/cardBack.png"));
+			ImageView imv1 = new ImageView(image);
+			imv1.fitWidthProperty().bind(this.widthProperty());
+			imv1.fitHeightProperty().bind(this.heightProperty());
+			imv1.setPreserveRatio(true);
+			this.setGraphic(imv1);
+			
+			
 		}
 	}
 

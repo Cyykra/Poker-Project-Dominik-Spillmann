@@ -12,10 +12,13 @@ public enum HandType {
      * Determine the value of this hand. Note that this does not
      * account for any tie-breaking
      */
+	public static ArrayList<Card> clonedCards;
+	
     public static HandType evaluateHand(ArrayList<Card> cards) {
         HandType currentEval = HighCard;
         
-        ArrayList<Card> clonedCards = (ArrayList<Card>) cards.clone();
+        //sort the Cards
+        clonedCards = (ArrayList<Card>) cards.clone();
         Collections.sort(clonedCards);
         
         
@@ -31,7 +34,7 @@ public enum HandType {
         return currentEval;
     }
     
-    
+    //Method for OnePair
     public static boolean isOnePair(ArrayList<Card> cards) {
         boolean found = false;
         
@@ -43,7 +46,7 @@ public enum HandType {
         return found;
     }
     
-    
+    //Method for TwoPair
     public static boolean isTwoPair(ArrayList<Card> cards) {
         // Clone the cards, because we will be altering the list
         ArrayList<Card> clonedCards = (ArrayList<Card>) cards.clone();
@@ -64,6 +67,7 @@ public enum HandType {
         return firstPairFound && isOnePair(clonedCards);
     }
     
+    //Method for ThreeOfAKind
     public static boolean isThreeOfAKind(ArrayList<Card> cards) {
         boolean found = false;
         
@@ -80,7 +84,7 @@ public enum HandType {
     }
     
     
-    //New Method
+    //Method for Straight
     public static boolean isStraight(ArrayList<Card> cards) {
     	boolean straightFound = true;
     	
@@ -92,7 +96,7 @@ public enum HandType {
     }
     
     
-    //New Method
+    //Method for Flush
     public static boolean isFlush(ArrayList<Card> cards) {
         boolean flush = true;
         
@@ -107,7 +111,7 @@ public enum HandType {
     }
     
     
-    //New Method
+    //Method for FullHouse
     public static boolean isFullHouse(ArrayList<Card> cards) {
         boolean fullHouseFound = false;
         //first three cards must be equal & last two cards must be equal
@@ -125,7 +129,7 @@ public enum HandType {
     }
     
     
-    //New Method
+    //Method for FourOfAKind
     public static boolean isFourOfAKind(ArrayList<Card> cards) {
     	boolean found = false;
     	if(cards.get(0).getRank().ordinal() == cards.get(3).getRank().ordinal() ||
@@ -137,7 +141,7 @@ public enum HandType {
     }
     
     
-    //New Method
+    //Method for StraightFlush
     public static boolean isStraightFlush(ArrayList<Card> cards) {
     	boolean straight = HandType.isStraight(cards);
     	boolean flush = HandType.isFlush(cards);
@@ -146,4 +150,9 @@ public enum HandType {
                
         return straightFlush;
     }
+    
+    public static ArrayList<Card> getCardArray(){
+    	return clonedCards;
+    }
+    
 }

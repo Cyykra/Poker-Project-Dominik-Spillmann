@@ -8,14 +8,15 @@
 #controlArea {
     -fx-spacing: 15.0px;
     -fx-padding: 5.0px;
-    -fx-border-color: black;
     -fx-border-width: 2.0px;
 }
 
 .player {
 	-fx-padding: 5.0px;
-    -fx-border-color: black;
     -fx-border-width: 2.0px;
+    -fx-font-size: 12px;
+    -fx-text-fill: White;
+    
 }
 
 .card {
@@ -23,7 +24,7 @@
 	-fx-padding: 2.0px;
     -fx-border-color: black;
     -fx-border-width: 1.0px;
-	-fx-background-color: lemonchiffon;
+	-fx-background-color: White;
     -fx-min-width: 50;
     -fx-pref-width: 111;
     -fx-max-width: 500;
@@ -31,3 +32,41 @@
     -fx-pref-height: 162;
     -fx-max-height: 800;
 }
+
+.cardnull{
+	-fx-font-size: 18px;
+	-fx-padding: 2.0px;
+    -fx-border-width: 1.0px;
+	-fx-background-color: null;
+    -fx-min-width: 50;
+    -fx-pref-width: 111;
+    -fx-max-width: 500;
+    -fx-min-height: 80;
+    -fx-pref-height: 162;
+    -fx-max-height: 800;
+	
+}
+.button{
+	-fx-font-size: 18px;
+	-fx-text-fill: black;
+	-fx-background-color:grey;
+	-fx-background-radius: 2;
+	
+}
+
+
+.button:hover{
+	-fx-font-size: 18px;
+	-fx-background-color: black;
+	-fx-text-fill: white;
+	-fx-background-radius: 16;
+}
+
+.root{
+	-fx-background-image: url("../../images/PokerBackground.jpg");
+	-fx-cursor: hand;
+}
+
+
+
+

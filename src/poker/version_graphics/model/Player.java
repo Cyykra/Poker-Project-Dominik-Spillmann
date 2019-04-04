@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class Player implements Comparable<Player> {
     public static final int HAND_SIZE = 5;
     
-    private final String playerName; // This is the ID
+    private String playerName; // This is the ID
     private final ArrayList<Card> cards = new ArrayList<>();
     private HandType handType;
+
     
     public Player(String playerName) {
         this.playerName = playerName;
@@ -15,6 +16,10 @@ public class Player implements Comparable<Player> {
 
     public String getPlayerName() {
         return playerName;
+    }
+    
+    public void setPlayerName(String playerName) {
+    	this.playerName = playerName;
     }
 
     public ArrayList<Card> getCards() {
@@ -52,4 +57,11 @@ public class Player implements Comparable<Player> {
     public int compareTo(Player o) {
         return handType.compareTo(o.handType);
     }
+    
+    
+    
+    public HandType getHandType() {
+    	return handType;
+    }
+   
 }
