@@ -121,23 +121,15 @@ public class PokerGameView {
 		
 		VBox rightEdgeBox = new VBox();
 		rightEdgeBox.getChildren().addAll(exitgame, enableautoShuffle, disableautoShuffle);
-		rightEdgeBox.setSpacing(20);
+		rightEdgeBox.setSpacing(10);
 		
 		VBox leftBox = new VBox();
 		leftBox.getChildren().addAll(add2Pl, add4Pl);
-		leftBox.setSpacing(30);
+		leftBox.setSpacing(15);
 		
 		VBox rightBox = new VBox();
 		rightBox.getChildren().addAll(add6Pl, changeNames);
-		rightBox.setSpacing(30);
-		
-		Label ranks = new Label();
-		Image rank = new Image(this.getClass().getClassLoader().getResourceAsStream("poker/images/Rankings.png"));
-		ImageView rankings = new ImageView(rank);
-		ranks.setGraphic(rankings);
-		rankings.setFitHeight(240);
-		rankings.setFitWidth(500);
-		
+		rightBox.setSpacing(15);
 
 		r1.setPrefWidth(430);
 		r2.setPrefWidth(220);
@@ -167,7 +159,7 @@ public class PokerGameView {
 		
 		
 		// Disallow resizing - which is difficult to get right with images
-		stage.setResizable(false);
+		stage.setResizable(true);
 		stage.setFullScreen(true);
 		
 		
