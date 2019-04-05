@@ -38,7 +38,7 @@ public class WinEvaluation {
 		}else if(winner == playerordinals.get(j)) {
 		
 //---------------------------------------------------------------------------------			
-			//For ordinals, get HandType detected to evaluate
+			//For ordinal, get HandType detected to evaluate
 			switch(winner) {
 			//HighCard
 			case 0:
