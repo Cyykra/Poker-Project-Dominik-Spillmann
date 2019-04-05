@@ -1,12 +1,9 @@
 package poker.version_graphics.view;
 
-import javafx.event.ActionEvent;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -33,7 +30,6 @@ public class PokerGameView {
 	private Button enableautoShuffle;
 	private Button disableautoShuffle;
 	boolean autoshuffleon;
-	private ChangePlayerNamesView view;
 	private Button changeNames;
 	
 	private PokerGameModel model;
