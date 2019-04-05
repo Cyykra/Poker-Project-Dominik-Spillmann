@@ -157,6 +157,8 @@ public class PokerGameView {
 		// Disallow resizing - which is difficult to get right with images
 		stage.setResizable(false);
 		stage.setFullScreen(true);
+		stage.setHeight(1080);
+		stage.setWidth(1920);
 		
 		
         // Create the scene using our layout; then display it
