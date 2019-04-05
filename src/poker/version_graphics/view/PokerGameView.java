@@ -92,10 +92,15 @@ public class PokerGameView {
 		imv.setFitHeight(300);
 		imv.setFitHeight(150);
 		imageLabel.setGraphic(imv);
+		imageLabel.setPrefWidth(350);
+		imageLabel.setPrefHeight(185);
+		imageLabel.setMinHeight(92.5);
+		imageLabel.setMinWidth(175);
 		root.setTop(imageLabel);
 		
 		Region regionleft = new Region();
-		regionleft.setPrefWidth(160);
+		regionleft.setPrefWidth(200);
+		regionleft.setMaxWidth(300);
 		root.setLeft(regionleft);
 		
 
@@ -155,10 +160,10 @@ public class PokerGameView {
 		
 		
 		// Disallow resizing - which is difficult to get right with images
-		stage.setResizable(false);
+		stage.setResizable(true);
 		stage.setFullScreen(true);
-		stage.setHeight(1080);
-		stage.setWidth(1920);
+		stage.setHeight(2160);
+		stage.setWidth(3240);
 		
 		
         // Create the scene using our layout; then display it
