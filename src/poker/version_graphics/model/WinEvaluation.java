@@ -43,7 +43,7 @@ public class WinEvaluation {
 			//HighCard
 			case 0:
 				//player 1
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				//score = cards.get(4).getCardScore();
 				s = cards.get(4).getCardScoreAsInt();				
@@ -54,6 +54,7 @@ public class WinEvaluation {
 				sp2 = cardsp2.get(4).getCardScoreAsInt();
 				
 				if(s < sp2) {
+					winner = playerordinals.get(j);
 					player = model.getPlayer(j);
 					
 				//if first two cards are equal --> 
@@ -67,14 +68,10 @@ public class WinEvaluation {
 				
 				if(scndCardScorep1 < scndCardScorep2) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
+					winner = playerordinals.get(j);
+				}
 				}
 				
-				}else {
-				
-					player = model.getPlayer(winner);
-				}
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -84,7 +81,7 @@ public class WinEvaluation {
 			case 1:	
 				//player 1
 				int pl1=0;
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				boolean foundpl1 = false;
 				for (int c = 0; c < cards.size() - 1 && !foundpl1; c++) {
@@ -105,15 +102,11 @@ public class WinEvaluation {
 		                }
 		        }
 					if(pl1 < pl2) {
+						winner = playerordinals.get(j);
 						player = model.getPlayer(j);
-					}else {
-						player = model.getPlayer(winner);
-						}
+					}
 				cards.clear();
 				cardsp2.clear();
-				System.out.println(pl1 + "winner");
-				System.out.println(pl2 + "player.get(j)");
-				System.out.println("");
 				break;
 	
 //---------------------------------------------------------------------------------
@@ -121,7 +114,7 @@ public class WinEvaluation {
 			case 2:
 				//player 1
 				int pl1tp=0;
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				boolean foundpl1tp = false;
 				for (int c = 0; c < cards.size() - 1 && !foundpl1tp; c++) {
@@ -163,9 +156,9 @@ public class WinEvaluation {
 
 					if(pl1tp < pl2tp) {
 						player = model.getPlayer(j);
-					}else {
-						player = model.getPlayer(winner);
-						}
+						winner = playerordinals.get(j);
+					}
+					
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -175,7 +168,7 @@ public class WinEvaluation {
 			case 3:
 				//player 1
 				int threeofaKpl1 = 0;
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				boolean threeofakindpl1 = false;
 				for(int q = 0; q < cards.size() - 2 && !threeofakindpl1; q++) {
@@ -185,7 +178,6 @@ public class WinEvaluation {
 						threeofaKpl1 = cards.get(q).getCardScoreAsInt();
 					}
 				}
-//---------------------------------------------------------------------------------
 				
 				//player 2
 				int threeofaKpl2 = 0;
@@ -202,9 +194,9 @@ public class WinEvaluation {
 				
 				if(threeofaKpl1 < threeofaKpl2 ) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
-					}
+					winner = playerordinals.get(j);
+				}
+				
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -216,7 +208,7 @@ public class WinEvaluation {
 				int player2 =0;
 				
 				//player 1
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				
 				player1 = cards.get(4).getCardScoreAsInt();	
@@ -229,9 +221,9 @@ public class WinEvaluation {
 				
 				if(player1 < player2 ) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
-					}
+					winner = playerordinals.get(j);
+				}
+				
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -243,7 +235,7 @@ public class WinEvaluation {
 				int player2Flush = 0;
 				
 				//player 1
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				
 				player1Flush = cards.get(4).getCardScoreAsInt();				
@@ -256,9 +248,9 @@ public class WinEvaluation {
 				
 				if(player1Flush < player2Flush ) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
-					}
+					winner = playerordinals.get(j);
+				}
+				
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -270,7 +262,7 @@ public class WinEvaluation {
 				int player2FullHouse = 0;
 				
 				//player 1
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				
 				player1FullHouse = cards.get(4).getCardScoreAsInt();
@@ -285,9 +277,9 @@ public class WinEvaluation {
 				
 				if(player1FullHouse < player2FullHouse ) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
-					}
+					winner = playerordinals.get(j);
+				}
+				
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -299,7 +291,7 @@ public class WinEvaluation {
 				int player2fouroAK =0;
 				
 				//player 1
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				
 				player1 = cards.get(3).getCardScoreAsInt();	
@@ -312,9 +304,9 @@ public class WinEvaluation {
 				
 				if(player1fouroAK < player2fouroAK ) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
-					}
+					winner = playerordinals.get(j);
+				}
+				
 				cards.clear();
 				cardsp2.clear();
 				break;
@@ -325,7 +317,7 @@ public class WinEvaluation {
 				int player2StraightFlush =0;
 				
 				//player 1
-				cards.addAll(model.getPlayer(winner).getCards());
+				cards.addAll(player.getCards());
 				Collections.sort(cards);
 				
 				player1StraightFlush = cards.get(4).getCardScoreAsInt();	
@@ -338,9 +330,9 @@ public class WinEvaluation {
 				
 				if(player1StraightFlush < player2StraightFlush ) {
 					player = model.getPlayer(j);
-				}else {
-					player = model.getPlayer(winner);
-					}
+					winner = playerordinals.get(j);
+				}
+				
 				cards.clear();
 				cardsp2.clear();
 				break;
